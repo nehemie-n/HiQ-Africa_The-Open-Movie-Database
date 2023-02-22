@@ -19,7 +19,7 @@ defineProps({
       <NavBarVue :showSearch="showSearch"></NavBarVue>
     </header>
     <!--  -->
-    <main class="min-h-[80vh]">
+    <main class="min-h-[86vh]">
       <Screen>
         <slot></slot>
       </Screen>

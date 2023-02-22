@@ -1,12 +1,14 @@
+export interface MovieResult {
+  Title: string;
+  Year: string; // number
+  imdbID: string;
+  Type: "movie" | "serie";
+  Poster: string; // image
+}
 export interface SearchResults {
-  Search: {
-    Title: string;
-    Year: string; // number
-    imdbID: string;
-    Type: "movie" | "serie";
-    Poster: string; // image
-  }[];
+  Search: MovieResult[];
   totalResults: string; // number;
+  Error: string; // number;
   Response: "True";
 }
 
