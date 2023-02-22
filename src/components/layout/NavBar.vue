@@ -41,11 +41,17 @@ const links = [
         <!-- Search -->
         <!--  -->
         <div>
-          <SearchBar v-if="showSearch"></SearchBar>
+          <div v-if="showSearch">
+            <SearchBar></SearchBar>
+          </div>
           <div v-else>
             <div class="flex-row justify-center grid grid-cols-4">
               <div v-for="link of links">
-                <router-link class="px-8 py-6 transition-all hover:bg-slate-600/60 " :to="link.link">{{ link.label }}</router-link>
+                <router-link
+                  class="px-8 py-6 transition-all hover:bg-slate-600/60"
+                  :to="link.link"
+                  >{{ link.label }}</router-link
+                >
               </div>
             </div>
           </div>

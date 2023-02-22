@@ -12,6 +12,6 @@ export const API = Axios.create({
  */
 API.interceptors.request.use((request) => {
   const authToken = import.meta.env.VITE_OMDB_API_KEY;
-  request.url + `&apikey=${authToken}`;
+  request.url = request.url + `?apikey=${authToken}&`;
   return request;
 });
