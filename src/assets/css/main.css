@@ -1,0 +1,6 @@
+@import "./base.css";
+
+body {
+  @apply bg-black;
+  font-family: "Poppins", sans-serif;
+}
