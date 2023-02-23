@@ -4,3 +4,15 @@ body {
   @apply bg-black;
   font-family: "Poppins", sans-serif;
 }
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  border-radius: 5px; /* Make it a little bit rounded */
+  @apply bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-400;
+  border-radius: 5px; /* Make it a little bit rounded */
+}

@@ -13,7 +13,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="min-h-[80vh] pt-20">
+  <div class="min-h-[80vh] pt-20 pb-10">
     <!--  -->
     <header class="fixed top-0 w-full left-0">
       <NavBarVue :showSearch="showSearch"></NavBarVue>
