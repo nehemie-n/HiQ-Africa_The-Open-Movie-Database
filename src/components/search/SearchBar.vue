@@ -49,7 +49,7 @@ function search(ev: Event) {
 .SearchBar input {
   @apply rounded-lg w-full text-black transition-all;
   @apply border-2 md:border-4;
-  @apply  border-slate-100;
+  @apply border-slate-100;
   @apply hover:border-pink-700 focus-visible:outline-none;
 }
 /* For big search box */

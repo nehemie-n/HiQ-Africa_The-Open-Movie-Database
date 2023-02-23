@@ -41,7 +41,7 @@ export const useSearchStore = defineStore("useSearchStore", () => {
   function fetchResults() {
     if ((q.value?.length ?? 0) > 2) {
       resetResults();
-      apiFetch();
+      return apiFetch();
     }
   }
 

@@ -40,7 +40,7 @@ const { bookmark, isBookmarked, unBookmark } = useMovieComposable(props.movie);
       <router-link :to="`/movie/${movie.imdbID}`">
         <div>
           <div>
-            <h3 class="text-sm font-semibold">
+            <h3 class="MovieTitle text-sm font-semibold">
               {{ title }}
             </h3>
           </div>
@@ -48,7 +48,7 @@ const { bookmark, isBookmarked, unBookmark } = useMovieComposable(props.movie);
             <span>
               {{ capitalize(movie.Type) }}
             </span>
-            <span class="px-1"> - {{ movie.Year }} </span>
+            <span class="MovieYear px-1"> - {{ movie.Year }} </span>
           </div>
         </div>
       </router-link>

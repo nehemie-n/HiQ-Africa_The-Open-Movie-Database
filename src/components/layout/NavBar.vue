@@ -26,7 +26,7 @@ const links = [
 </script>
 
 <template>
-  <div class="border-b-2 bg-slate-900 backdrop-blur  border-white/10 py-2">
+  <div class="border-b-2 bg-slate-900 backdrop-blur border-white/10 py-2">
     <Screen>
       <div class="flex flex-row justify-between items-center">
         <!--  -->
@@ -41,7 +41,7 @@ const links = [
             <SearchBar></SearchBar>
           </div>
           <div v-else class="text-center hidden md:block">
-            <div class="flex-row justify-center  items-center grid grid-cols-3">
+            <div class="flex-row justify-center items-center grid grid-cols-3">
               <div v-for="link of links">
                 <router-link
                   class="px-8 py-6 transition-all hover:bg-slate-600/60"

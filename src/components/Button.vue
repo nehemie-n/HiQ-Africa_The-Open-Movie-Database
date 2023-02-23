@@ -8,7 +8,10 @@ defineProps({
 </script>
 
 <template>
-  <button :class="type" class="Button text-sm rounded flex items-center gap-x-2">
+  <button
+    :class="type"
+    class="Button text-sm rounded flex items-center gap-x-2"
+  >
     <slot></slot>
   </button>
 </template>

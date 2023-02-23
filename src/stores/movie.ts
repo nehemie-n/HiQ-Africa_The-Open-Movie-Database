@@ -28,7 +28,7 @@ export const useMovieStore = defineStore("useMovieStore", () => {
   function fetchResults(_id: string) {
     resetResults();
     id.value = _id;
-    apiFetch();
+    return apiFetch();
   }
 
   function resetResults() {

@@ -25,7 +25,8 @@ const { q } = storeToRefs(useSearchStore());
       <!--  -->
       <div class="text-center mx-auto max-w-md">
         <p class="opacity-80 text-pink-100">
-          Remember to press enter <br> to trigger search!
+          Remember to press enter <br />
+          to trigger search!
         </p>
       </div>
       <!--  -->
