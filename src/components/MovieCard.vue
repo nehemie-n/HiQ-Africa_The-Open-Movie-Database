@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { useMovieComposable } from "@/composables";
 import type { MovieResult } from "@/interface";
 import { capitalize, computed } from "vue";
+import { BookmarkAddOutlined, BookmarkAddedRound } from "@vicons/material";
+import { Icon } from "@vicons/utils";
 
 const props = defineProps({
   movie: {
@@ -10,16 +13,18 @@ const props = defineProps({
 });
 
 const title = computed(() => {
-  return props.movie.Title.length > 30
-    ? props.movie.Title.slice(0, 25) + "..."
+  return props.movie.Title.length > 20
+    ? props.movie.Title.slice(0, 21) + "..."
     : props.movie.Title;
 });
+
+const { bookmark, isBookmarked, unBookmark } = useMovieComposable(props.movie);
 </script>
 
 <template>
-  <router-link :to="`/movie/${movie.imdbID}`">
-    <div class="MovieCard">
-      <!-- Img -->
+  <div class="MovieCard">
+    <!-- Img -->
+    <router-link :to="`/movie/${movie.imdbID}`">
       <div class="MovieCard-Img">
         <img
           :src="movie.Poster"
@@ -27,22 +32,42 @@ const title = computed(() => {
           alt=""
         />
       </div>
-      <!-- Title -->
-      <div class="py-2 px-4">
+    </router-link>
+    <!-- Title -->
+    <div
+      class="py-2 px-2 flex flex-row flex-nowrap items-center justify-between"
+    >
+      <router-link :to="`/movie/${movie.imdbID}`">
         <div>
-          <h3 class="text-sm font-semibold">
-            {{ title }}
-          </h3>
+          <div>
+            <h3 class="text-sm font-semibold">
+              {{ title }}
+            </h3>
+          </div>
+          <div class="text-xs">
+            <span>
+              {{ capitalize(movie.Type) }}
+            </span>
+            <span class="px-1"> - {{ movie.Year }} </span>
+          </div>
         </div>
-        <div class="text-xs">
-          <span>
-            {{ capitalize(movie.Type) }}
-          </span>
-          <span class="px-1"> - {{ movie.Year }} </span>
-        </div>
+      </router-link>
+      <!--  -->
+      <div>
+        <button class="px-2 py-1" @click="unBookmark" v-if="isBookmarked">
+          <Icon size="22" class="text-pink-700">
+            <BookmarkAddedRound />
+          </Icon>
+        </button>
+        <button class="px-2 py-1" @click="bookmark" v-else>
+          <Icon size="22">
+            <BookmarkAddOutlined />
+          </Icon>
+        </button>
       </div>
+      <!--  -->
     </div>
-  </router-link>
+  </div>
 </template>
 
 <style>

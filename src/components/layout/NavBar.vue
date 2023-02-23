@@ -11,26 +11,22 @@ defineProps({
 
 const links = [
   {
-    label: "About",
-    link: "",
-  },
-  {
-    label: "Pricing",
-    link: "",
-  },
-  {
     label: "Series",
-    link: "",
+    link: "/search/series",
   },
   {
     label: "Movies",
-    link: "",
+    link: "/search/movies",
+  },
+  {
+    label: "Bookmarked",
+    link: "/account/bookmarks",
   },
 ];
 </script>
 
 <template>
-  <div class="border-b-2 border-white/10 py-2">
+  <div class="border-b-2 bg-slate-900 backdrop-blur  border-white/10 py-2">
     <Screen>
       <div class="flex flex-row justify-between items-center">
         <!--  -->
@@ -44,8 +40,8 @@ const links = [
           <div v-if="showSearch">
             <SearchBar></SearchBar>
           </div>
-          <div v-else>
-            <div class="flex-row justify-center grid grid-cols-4">
+          <div v-else class="text-center">
+            <div class="flex-row justify-center  items-center grid grid-cols-3">
               <div v-for="link of links">
                 <router-link
                   class="px-8 py-6 transition-all hover:bg-slate-600/60"

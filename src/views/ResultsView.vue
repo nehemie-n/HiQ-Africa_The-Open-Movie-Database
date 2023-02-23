@@ -4,12 +4,20 @@ import MovieCardVue from "@/components/MovieCard.vue";
 import spinnerVue from "@/components/spinner.vue";
 import { useSearchStore } from "@/stores";
 import { storeToRefs } from "pinia";
-import { onMounted } from "vue";
+import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 
 const { q, results, isLoading } = storeToRefs(useSearchStore());
 const { fetchResults } = useSearchStore();
 const route = useRoute();
+
+watch(
+  () => route.params.q,
+  () => {
+    q.value = route.params.q as string;
+    fetchResults();
+  }
+);
 
 onMounted(() => {
   console.log("Route Name View: ", route);
@@ -49,12 +57,11 @@ onMounted(() => {
         <div
           class="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-4 lg:grid-cols-5 lg:gap-4"
         >
-          <div
+          <MovieCardVue
             v-for="movie of results.data.Search"
             :key="movie.Title + movie.imdbID"
-          >
-            <MovieCardVue :movie="movie"></MovieCardVue>
-          </div>
+            :movie="movie"
+          />
         </div>
       </div>
     </div>

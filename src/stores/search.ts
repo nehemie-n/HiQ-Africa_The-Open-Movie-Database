@@ -7,8 +7,6 @@ import { API } from "./api";
 export const useSearchStore = defineStore("useSearchStore", () => {
   const q = ref<string>();
   const isLoading = ref<boolean>(false);
-  const route = useRoute();
-  const router = useRouter();
   const results = reactive({
     data: {
       Search: [],
@@ -43,13 +41,7 @@ export const useSearchStore = defineStore("useSearchStore", () => {
   function fetchResults() {
     if ((q.value?.length ?? 0) > 2) {
       resetResults();
-      console.log(q.value);
-      console.log("Route Name: ", route.name);
-      if (route.name == "Results") {
-        apiFetch();
-      } else {
-        router.push(`/search/${q.value}`);
-      }
+      apiFetch();
     }
   }
 

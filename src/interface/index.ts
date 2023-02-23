@@ -8,11 +8,13 @@ export interface MovieResult {
 export interface SearchResults {
   Search: MovieResult[];
   totalResults: string; // number;
-  Error: string; // number;
+  Error?: string; // number;
   Response: "True";
 }
 
 export interface SingleMovie {
+  Error?: string;
+  //
   Title: "Guardians of the Galaxy Vol. 2";
   Year: "2017";
   Rated: "PG-13";

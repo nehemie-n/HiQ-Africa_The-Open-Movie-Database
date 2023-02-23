@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { useSearchStore } from "@/stores";
 import { storeToRefs } from "pinia";
+import { useRoute, useRouter } from "vue-router";
 
 const { q } = storeToRefs(useSearchStore());
-const { fetchResults } = useSearchStore();
+const route = useRoute();
+const router = useRouter();
 
 /**
  *
@@ -21,9 +23,9 @@ defineProps({
  */
 function search(ev: Event) {
   ev.preventDefault();
-  console.log(ev);
-  console.log(q.value);
-  fetchResults();
+  if ((q.value?.length ?? 0) > 2) {
+    router.push(`/search/${q.value}`);
+  }
 }
 </script>
 
@@ -58,7 +60,7 @@ function search(ev: Event) {
 
 /* For small */
 .SearchBar.def {
-    @apply rounded-full;
+  @apply rounded-full;
 }
 .SearchBar.def input {
   @apply px-6 py-2 text-base rounded-full min-w-[300px];
