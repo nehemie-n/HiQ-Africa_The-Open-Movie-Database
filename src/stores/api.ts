@@ -4,7 +4,7 @@ import Axios, {
 } from "axios";
 
 export const API = Axios.create({
-  baseURL: "http://www.omdbapi.com",
+  baseURL: "https://www.omdbapi.com",
 });
 
 /**
