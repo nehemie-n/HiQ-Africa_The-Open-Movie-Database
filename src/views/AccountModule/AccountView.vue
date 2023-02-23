@@ -13,7 +13,7 @@ import ScreenVue from "@/components/layout/Screen.vue";
             <div>
               <img
                 class="w-24 h-24 md:w-38 md:h-38 rounded-full mx-auto object-cover"
-                src="https://tailwindcss.com/_next/static/media/sarah-dayan.a620c98f.jpg"
+                src="https://api.dicebear.com/5.x/micah/svg?seed=Chloe"
                 alt=""
                 width="384"
                 height="512"
@@ -22,16 +22,21 @@ import ScreenVue from "@/components/layout/Screen.vue";
             <div class="pt-6 text-center md:text-left space-y-4">
               <blockquote>
                 <p class="text-lg text-center font-medium">
-                  My IMDB Api Profile, This site is not endorsed by or
+                  My IMDB Api Profile. This site is not endorsed by or
                   affiliated with IMDb.com. It is just a demo. Lots here is the
                   owesome tailwindcss, I LOVE IT!
                 </p>
               </blockquote>
               <figcaption class="font-medium">
-                <div class="text-center text-pink-500">Nehemie</div>
-                <div class="text-center text-slate-700 dark:text-slate-500">
-                  Software Engineer, Kigali
-                </div>
+                <a
+                  href="https://www.linkedin.com/in/nehemieniyomahoro/"
+                  target="_blank"
+                >
+                  <div class="text-center text-pink-500">Nehemie</div>
+                  <div class="text-center text-slate-700 dark:text-slate-500">
+                    Software Engineer, Kigali
+                  </div>
+                </a>
               </figcaption>
             </div>
           </figure>

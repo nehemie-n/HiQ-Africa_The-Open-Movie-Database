@@ -58,7 +58,7 @@ const links = [
           <router-link to="/account/bookmarks">
             <img
               class="w-10 h-10 md:w-12 md:h-12 rounded-full"
-              src="https://tailwindui.com/img/avatar-3.jpg"
+              src="https://api.dicebear.com/5.x/micah/svg?seed=Chloe"
               alt="Account Image"
             />
           </router-link>
