@@ -1,6 +1,17 @@
 # HiQ-Africa_OMDb
 
-This template should help get you started developing with Vue 3 in Vite.
+A Vue3 JS web application that allows users to search for and view information about movies using the Open Movie Database API (OMDb). You can also bookmark them and check them on the account page.
+<br/>
+<br/>
+Below is a link to hosted version.
+
+### **[https://hiq-africa-omdb.vercel.app/](https://hiq-africa-omdb.vercel.app/)**
+
+<br>
+
+The API has a limit of 1000 requests per day, if they are up to the limit you can clone and run manually using the below manual. Getting your API key is simple as clicking a button here  https://www.omdbapi.com/apikey.aspx. Just remember to add a variable `VITE_OMDB_API_KEY=your_key_here` in a file called .env
+
+<br/>
 
 ## Recommended IDE Setup
 
