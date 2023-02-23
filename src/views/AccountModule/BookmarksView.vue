@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import MovieCard from "@/components/MovieCard.vue";
-import { useLocalStorage } from "@vueuse/core";
+import { useLocalStorage, useTitle } from "@vueuse/core";
 const bookmarked = useLocalStorage<Record<string, any>>("bookmarks", {});
+
+useTitle("My Bookmarked Movies");
 </script>
 
 <template>

@@ -3,6 +3,7 @@ import MainLayout from "@/components/layout/MainLayout.vue";
 import MovieCardVue from "@/components/MovieCard.vue";
 import spinnerVue from "@/components/spinner.vue";
 import { useSearchStore } from "@/stores";
+import { useTitle } from "@vueuse/core";
 import { storeToRefs } from "pinia";
 import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
@@ -11,18 +12,20 @@ const { q, results, isLoading } = storeToRefs(useSearchStore());
 const { fetchResults } = useSearchStore();
 const route = useRoute();
 
+function search() {
+  useTitle(`OMDb Searching for ${route.params.q}`);
+  q.value = route.params.q as string;
+  fetchResults();
+}
 watch(
   () => route.params.q,
   () => {
-    q.value = route.params.q as string;
-    fetchResults();
+    search();
   }
 );
 
 onMounted(() => {
-  console.log("Route Name View: ", route);
-  q.value = route.params.q as string;
-  fetchResults();
+  search();
 });
 </script>
 

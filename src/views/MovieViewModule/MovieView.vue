@@ -2,16 +2,21 @@
 import MainLayout from "@/components/layout/MainLayout.vue";
 import Screen from "@/components/layout/Screen.vue";
 import Spinner from "@/components/spinner.vue";
+import { useTitle } from "@vueuse/core";
 import { storeToRefs } from "pinia";
-import { capitalize, computed, onMounted } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { capitalize, computed, onMounted, watch } from "vue";
+import { useRoute } from "vue-router";
 import { useMovieStore } from "../../stores";
 import Bookmark from "./Bookmark.vue";
 
-const router = useRouter();
 const route = useRoute();
 
 const { isLoading, result } = storeToRefs(useMovieStore());
+
+watch(result.value, () => {
+  useTitle(`OMDb ${result.value.data?.Title ?? ""}`);
+});
+
 const { fetchResults } = useMovieStore();
 
 onMounted(() => {

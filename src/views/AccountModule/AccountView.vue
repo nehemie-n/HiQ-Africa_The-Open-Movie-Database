@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import MainLayout from "@/components/layout/MainLayout.vue";
 import ScreenVue from "@/components/layout/Screen.vue";
+import { useTitle } from "@vueuse/core";
+
+useTitle("My Account");
 </script>
 
 <template>

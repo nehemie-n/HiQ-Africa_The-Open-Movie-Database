@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import MainLayoutVue from "@/components/layout/MainLayout.vue";
 import SearchBarVue from "@/components/search/SearchBar.vue";
-import { useSearchStore } from "@/stores";
-import { storeToRefs } from "pinia";
-const { q } = storeToRefs(useSearchStore());
+import { useTitle } from "@vueuse/core";
+useTitle("OMDb, The Home for Awosome Movies Data.");
 </script>
 
 <template>
