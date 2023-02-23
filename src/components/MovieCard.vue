@@ -28,7 +28,7 @@ const { bookmark, isBookmarked, unBookmark } = useMovieComposable(props.movie);
       <div class="MovieCard-Img">
         <img
           :src="movie.Poster"
-          class="rounded-sm object-cover object-top w-full h-[310px]"
+          class="rounded-sm object-cover object-top w-full h-[220px] md:h-[260px] lg:h-[290px] xl:h-[310px]"
           alt=""
         />
       </div>

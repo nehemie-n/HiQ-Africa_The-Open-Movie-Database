@@ -30,7 +30,7 @@ function search(ev: Event) {
 </script>
 
 <template>
-  <div class="px-4 hover:px-0 transition-all duration-500">
+  <div class="px-4 hover:px-1 hover:md:px-0 transition-all duration-500">
     <form class="SearchBar" :class="size" @submit="search">
       <input
         v-model="q"
@@ -48,7 +48,8 @@ function search(ev: Event) {
 }
 .SearchBar input {
   @apply rounded-lg w-full text-black transition-all;
-  @apply border-4 border-slate-100;
+  @apply border-2 md:border-4;
+  @apply  border-slate-100;
   @apply hover:border-pink-700 focus-visible:outline-none;
 }
 /* For big search box */
@@ -63,6 +64,8 @@ function search(ev: Event) {
   @apply rounded-full;
 }
 .SearchBar.def input {
-  @apply px-6 py-2 text-base rounded-full min-w-[300px];
+  @apply rounded-full;
+  @apply px-2 py-3 text-xs min-w-[120px];
+  @apply md:px-6 md:py-2 md:text-base  md:min-w-[300px];
 }
 </style>

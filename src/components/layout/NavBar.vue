@@ -32,7 +32,7 @@ const links = [
         <!--  -->
         <!-- Logo -->
         <router-link to="/">
-          <h2 class="py-2 font-bold">OMDb</h2>
+          <h2 class="text-xs md:text-base py-2 font-bold">OMDb</h2>
         </router-link>
         <!-- Search -->
         <!--  -->
@@ -40,7 +40,7 @@ const links = [
           <div v-if="showSearch">
             <SearchBar></SearchBar>
           </div>
-          <div v-else class="text-center">
+          <div v-else class="text-center hidden md:block">
             <div class="flex-row justify-center  items-center grid grid-cols-3">
               <div v-for="link of links">
                 <router-link
@@ -57,7 +57,7 @@ const links = [
         <div>
           <router-link to="/account/bookmarks">
             <img
-              class="w-12 h-12 rounded-full"
+              class="w-10 h-10 md:w-12 md:h-12 rounded-full"
               src="https://tailwindui.com/img/avatar-3.jpg"
               alt="Account Image"
             />

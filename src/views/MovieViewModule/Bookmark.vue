@@ -15,7 +15,7 @@ const { bookmark, isBookmarked, unBookmark } = useMovieComposable(props.movie);
 </script>
 
 <template>
-  <div>
+  <div class="flex justify-center md:justify-start">
     <Button type="primary" @click="unBookmark" v-if="isBookmarked">
       <Icon size="20" class="text-white">
         <BookmarkAddedRound />
