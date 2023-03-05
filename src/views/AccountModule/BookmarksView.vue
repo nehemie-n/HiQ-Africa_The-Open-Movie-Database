@@ -10,7 +10,7 @@ useTitle("My Bookmarked Movies");
   <div class="py-4 px-4 md:py-8 md:px-10">
     <h1 class="font-semibold">Bookmarked Movies</h1>
     <!--  -->
-    <div class="pt-6" v-if="bookmarked && bookmarked.length > 0">
+    <div class="pt-6" v-if="bookmarked">
       <div
         class="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-4 xl:grid-cols-5 xl:gap-4"
       >
